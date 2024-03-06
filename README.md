@@ -22,3 +22,13 @@
                 .setConstraints(constraints)
                 .build();
         WorkManager.getInstance(this).enqueue(oneTimeWorkRequest);
+# Periodic Work Manager
+ - You can repeat some tasks in a perticular time interval.
+ - initialse your periodic work request
+
+        // Periodic work request
+        PeriodicWorkRequest periodicWorkRequest = new PeriodicWorkRequest.Builder(MyWorker.class, 30, TimeUnit.SECONDS)
+                //.setConstraints(constraints)
+                .build();
+        WorkManager.getInstance(this).enqueue(periodicWorkRequest);
+
